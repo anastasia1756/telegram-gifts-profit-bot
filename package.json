@@ -1,0 +1,16 @@
+{
+  "name": "portal-profit-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node ./src/bot.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.18",
+    "dotenv": "^16.6.1",
+    "mysql2": "^3.15.2",
+    "node-cron": "^3.0.3",
+    "node-telegram-bot-api": "^0.63.0"
+  }
+}

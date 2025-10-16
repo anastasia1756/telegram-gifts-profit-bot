@@ -1,22 +1,17 @@
-# fly.toml file for your Telegram gifts profit bot
+# fly.toml — конфиг для Telegram Gifts Profit Bot
 app = "telegram-gifts-profit-bot" 
 primary_region = "fra"
 
 [build]
-  builder = "heroku/buildpacks:20"
+  builder = "heroku/builder:24"
 
 [env]
   NODE_ENV = "production"
 
-[[services]]
-  internal_port = 8080
-  processes = ["app"]
-  protocol = "tcp"
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  cpu_kind = "shared"
 
-  [[services.ports]]
-    handlers = ["http"]
-    port = 80
-
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
+[processes]
+  app = "npm start"
